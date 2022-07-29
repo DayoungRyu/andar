@@ -1,0 +1,706 @@
+body{
+    font-family: 'Gilroy','NotoSansKR',Malgun Gothic,'맑은 고딕',Dotum,'돋움',sans-serif;
+    color:#333;
+    min-width:320px;
+    font-size: 13px;
+    line-height: 1.2em;
+    vertical-align: baseline;
+    position:relative;
+}
+
+body.hidden{
+    overflow:hidden;
+}
+
+header{
+    height: 40px;
+    position:relative;
+}
+
+.aside{
+    position:fixed;
+    background: #fff;
+    z-index: 100000000;
+    width: 85%;
+    height: auto;
+    left:-100%;
+    top:0;
+    transition:0.5s;
+}
+
+.aside.on{
+    left:0;
+}
+
+.aside .inner{
+    padding: 0 24px 0 16px;
+}
+
+.aside_top{
+    padding:38px 0 26px; 
+    position:relative;
+}
+
+.aside_top .btn_close{
+    display: block;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    right: 4px;
+    top: 0;
+    padding: 17px 20px !important;
+    font-size: 0;
+}
+
+.aside_top .btn_close::after{
+    position: absolute;
+    display: block;
+    top: 17px;
+    left: 20px;
+    width: 24px;
+    height: 24px;
+    background: url(../img/icon_close.png) no-repeat;
+    background-size: 100% auto;
+    content: "";  
+}
+
+.aside_top .login_area{
+    display:block;
+    overflow: hidden;
+}
+
+.aside_top .login_area a{
+    width: auto;
+    height: auto;
+    padding: 10px 26px;
+    font-size: 13px;
+    line-height: 15px;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 4px;
+    float: left;
+}
+
+.aside_top .login_area a.join{
+    background: #fff;
+    border: 1px solid #ccc;
+    color: #333;
+    font-weight: 500;
+    margin-left: 12px;
+}
+
+.aside_top .login{
+    background: #0e0e0e;
+    
+}
+
+.aside .aside_top p{
+    margin-top:15px;
+    color: #777;
+    font-weight: 400;
+    font-size: 13px;
+}
+
+.aside .aside_top p strong{
+    font-weight: 700;
+}
+
+.aside_gnb{
+    border-top: 1px solid #ddd;
+    padding: 18px 0 11px;
+    display:flex;
+    flex-direction: column;
+}
+
+.aside_gnb > li{
+    width: 100%;
+    display:block;
+    
+    position:relative;
+}
+.aside_gnb > li > a{
+    height: 20px;
+    margin:15px 0;
+    display:block;
+}
+.aside_gnb > li > a span{
+    display: block;
+    color: #333;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 500;
+}
+
+.aside_gnb > li > a span.point::after{
+    position: relative;
+    top: -8px;
+    right: -2px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #ee5728;
+    display: inline-block;
+    content: "";
+}
+.aside_gnb > li > a .arrow_box{
+    position:absolute;right:0;top:0;
+}
+
+.aside_gnb > li > a .arrow_box i{
+    display: block;
+    width: 30px;
+    height: 28px;
+    background: url(../img/btn_open.png) no-repeat;
+    background-size: 28px auto;
+    background-position: center;
+}
+
+.aside_gnb > li .sub{
+    height:0;
+    overflow: hidden;
+}
+
+.aside_gnb > li .sub ul{
+    padding-bottom:15px;
+}
+
+.aside_gnb > li .sub ul li a{
+    display: block;
+    padding: 11px 0;
+    color: #848484;
+    font-size: 17px;
+    line-height: 20px;
+    font-weight: 400;
+}
+
+.aside_bottom{
+    border-top: 1px solid #ddd;
+    padding: 18px 0 11px;
+}
+
+.aside_bottom li a{
+    display: block;
+    padding: 13px 0;
+    color: #2d2d2d;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+}
+
+.upper_bar{
+    height: 40px;
+    background: #030303;
+    text-align: center; 
+    font-weight: 500;
+    color:#fff;
+    letter-spacing: -0.02em;
+}
+
+header .aside_bg{
+    opacity: 1;
+    transition: all 0.7s ease;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.65);
+    position: fixed;
+    top: 0;
+    left: 0;
+    visibility:hidden;
+    opacity: 0;
+    z-index: 100;
+} 
+  
+header .aside_bg.on{
+    visibility: visible;
+    opacity: 1;
+}
+
+.upper_bar a{
+    line-height:40px;
+    display: block;
+    height: 100%;
+}
+
+.upper_bar span.header_bold{
+    font-weight: 700;
+}
+
+.upper_bar .icon_kakao{
+    display:inline-block;
+    vertical-align: middle;
+    width: 17px;
+    height: 18px;
+    line-height: 20px;
+    margin-left: 7px;
+    margin-bottom: 2px;
+    background: url(../img/Icon_kakao_channel.png) no-repeat center;
+    background-size: contain;
+}
+
+.upper_bar .icon_right{
+    display: inline-block;
+    vertical-align: middle;
+    width: 24px;
+    height: 16px;
+    margin-bottom: 4px;
+    background: url(../img/arrow_wh.png) no-repeat center;
+    background-size: 100% auto;
+}
+
+.logo_wrap{
+    width: 100%;
+    height: 56px;
+    position:absolute;
+    top:40px; left:0;
+}
+
+.logo_wrap h1{
+    position: absolute;
+    left:50%;
+    top:11.5px;
+    transform: translateX(-50%);
+    width: 87px; height: 23px;
+    background: #f00;
+    z-index: 100000;
+    display: block;
+    background: url(https://m.andar.co.kr/web/upload/logo/main_logo_m.svg) no-repeat center/87px auto;
+}
+
+.logo_wrap h1 a{
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.logo_wrap .hd_left a,
+.logo_wrap .hd_right a{
+    display: block;
+    height: 18px;
+    float: left;
+}
+
+.logo_wrap .hd_left{
+    position: absolute;
+    left:0;
+    overflow: hidden;
+    top:50%;
+    transform:translateY(-50%);
+    z-index: 100000;
+}
+
+.logo_wrap .hd_left .menu_bar{
+    background-position: -25px -50px;
+    width: 22px;
+    margin: 8px;
+}
+
+.logo_wrap .hd_left .search{
+    background-position: -25px -75px;
+    margin:0 8px;
+    width: 17px;
+}
+
+.logo_wrap .hd_right{
+    position: absolute;
+    right:0;
+    top:50%;
+    transform:translateY(-50%);
+    overflow: hidden;
+    z-index: 100000;
+}
+
+.logo_wrap .hd_right .cart{
+    background-position: -25px -25px;
+    width: 19px; height: 17px;
+}
+.logo_wrap .hd_right .login{
+    background-position: -25px 0;
+    width: 18px;
+    margin:0 15px;
+}
+
+/*스크롤 다운시 logo영역 변화*/
+
+header .header_wrap.fixed{
+    position:fixed;
+    top:0;
+    z-index: 1000000;
+    width:100%;
+}
+
+header .header_wrap.fixed .logo_wrap{
+    top:0;
+}
+
+.logo_wrap.white{
+    background: #fff;
+    z-index: 10;
+}
+
+.logo_wrap.white h1{
+    background: url(https://m.andar.co.kr/web/upload/logo/main_logo.svg) no-repeat center/87px auto;
+}
+
+.logo_wrap.white .main_left .menu_bar{
+    background-position: 0 -50px;
+}
+
+.logo_wrap.white .main_left .search{
+    background-position: 0 -75px;
+}
+
+.logo_wrap.white .main_right .cart{
+    background-position: 0 -25px;
+}
+.logo_wrap.white .main_right .login{
+    background-position: 0px 0;
+
+}
+
+.gnb_wrap{
+    width: 100%;
+    position:absolute;
+    color:#000;
+    top:56px;
+    left:0;
+    z-index: 1000000;
+    visibility: hidden;
+}
+
+.header_wrap.fixed .gnb_wrap .menulist{
+    width: 100%;
+    display: flex;
+    height: 45px;
+    padding:11px 0 11px 15px;
+    font-size: 16px;
+    line-height:23px;
+    background: #fff;
+    visibility:visible;
+}
+
+.header_wrap.fixed .gnb_wrap .menulist.hide{
+    visibility:hidden;
+}
+
+
+.gnb_wrap .menulist .submenu{
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 15px;
+    line-height: 23px;
+    letter-spacing: -0.05em;
+    color: #333;
+    font-weight: 600;
+    vertical-align: middle;
+}
+
+header .gnb_wrap .all{
+    line-height:45px;
+    position: absolute;
+    top:0; left:0px;
+    font-size:16px;
+    color: #333;
+    font-weight: 600;
+    visibility:hidden;
+    width:100%;
+    background: #Fff;
+    padding-left:15px;
+}
+  
+.header_wrap.fixed .gnb_wrap .all.hide{
+    visibility: visible;
+}
+
+.header_wrap.fixed .gnb_wrap .more_button{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    background: url(../img/btn_open.png) no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+    visibility:visible;
+}
+
+.gnb_wrap span.more_button.rotate{
+    transform: rotate(180deg);
+    transition: all 0.1s;
+}
+
+.gnb_wrap .submenumore{
+    height: 0;
+}
+
+.gnb_wrap .submenumore.on{
+    visibility:visible;
+}
+
+.gnb_wrap .submenumore ul{
+    display:flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    background: #F6F6F6;
+    border-top: 1px solid #dcdcdc;
+    padding:6px 12px;
+}
+
+.gnb_wrap .submenumore ul li{
+    display: inline-block;
+    padding: 8px 17px;
+    margin: 3px 3px;
+    border: 1px solid #ebebeb;
+    border-radius: 100px;
+    box-sizing: border-box;
+    background: #fff;
+    font-size: 14px;
+    line-height: 20px;
+    color: #000;
+    letter-spacing: -0.05em; 
+}
+
+.gnb_wrap .submenumore ul li a{
+    display: inline-block;
+    height: 100%;
+}
+
+.gnb_wrap .submenumore ul li a.sub_after::after,
+.gnb_wrap ul.menulist li.sub_after::after{
+    position: relative;
+    top: -8px;
+    right: -2px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #ee5728;
+    display: inline-block;
+    content: "";
+}
+
+
+footer{
+    margin: 0;
+    background: #fafafa;
+    padding: 40px 16px 40px;
+    color: #555;
+}
+
+footer h5{
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: 500;
+    padding-bottom: 15px;
+}
+
+footer .call{
+    font-size: 18px;
+    line-height: 21px;
+    font-weight: 700;
+    padding-bottom: 10px;
+}
+
+footer .work{
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: 400;
+    padding-bottom: 5px;
+    display:block;
+}
+
+footer .lunch{
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: 400;
+    padding-bottom:30px;
+    display:block;
+}
+
+footer .sns{
+    width: 150px;
+    overflow: hidden;
+}
+
+footer .sns a{
+    float: left;
+    display: block;
+    margin-right: 25px;
+}
+
+footer .sns a img{height: 22px;}
+
+
+footer .footer_direct{
+    padding:30px 0;
+    overflow: hidden;
+}
+
+footer .footer_direct a{
+    font-size: 12px;
+    line-height: 1.7;
+    color: #777;
+    font-weight: 700;
+    display: block;
+    padding: 9px 0;
+    float: left;
+    padding-right: 10px;
+    margin-right: 5px;
+    position:relative;
+}
+
+
+footer .footer_span_group address span{
+    display: inline-block;
+    float: left;
+    line-height: 21px;
+}
+
+footer .footer_span_group address span.line::after{
+    width: 1px;
+    height: 10px;
+    background: #ccc;
+    margin: 0 10px;
+}
+    
+footer .footer_direct a::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 10px;
+    background: #ccc;
+}
+
+footer .footer_direct a:last-child:after{
+    width: 0;
+}
+
+footer .footer_span_group address{
+    overflow: hidden;
+    content: "";
+    display: block;
+    font-size: 11px;
+    line-height: 13px;
+    font-weight: 400;
+    color: #777;
+}
+
+footer .footer_span_group address p{
+    width: 100%;
+    height: auto;
+    display:block;
+    overflow: hidden;
+}
+
+footer .footer_span_group span{
+    float: left;
+}
+
+footer .footer_span_group span.line::after{
+    width: 1px;
+    height: 10px;
+    background: #ccc;
+    margin: 0 10px;
+    content: "";
+    display: inline-block;
+}
+
+footer .copy{
+    font-size: 11px;
+    line-height: 13px;
+    letter-spacing: -0.02em;
+    color: #777;
+    padding-top: 30px;
+    font-weight: 700;
+}
+
+footer .mark{
+   padding-top:24px;
+   overflow: hidden;
+}
+
+footer .mark a{
+    float: left;
+    margin-right: 22px;
+    width: 45px;
+    display: inline-block;
+}
+
+footer .mark a img{
+    width: 45px;
+    height: 34px;
+    display: block;
+}
+
+footer .mark a.symantec img{
+    width: 36px;
+    height: 38px;
+}
+
+footer .mark a.kg img{
+    width: 27px;
+    height: 31px;
+}
+
+.top_btn{
+    width: 50px;
+    visibility: hidden;
+    display: block;
+    position: fixed;
+    bottom: 50px;
+    right: 15px;
+    z-index: 10000000;
+    background-color: rgba(255,255,255,0.7);
+    border:1px solid #e9e9e9;
+}
+
+.top_btn.on{
+    visibility:visible;
+}
+
+.top_btn .top_btnbox{
+    padding:5px;
+    display: block;
+}
+
+.top_btn .talk{
+    box-sizing: border-box;
+    display: block;
+
+    height: 30px;
+    background-image: url(../img/kakao_chat.png);
+    background-size: 35px 30px;
+    margin-top: 4px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.top_btn span{
+    display: block;
+    padding-top: 10px;
+    font-size: 11px;
+    line-height: 13px;
+    letter-spacing: -0.04em;
+    font-weight: 500;
+    color: #595959;
+    text-align: center;
+}
+
+
+.top_btn .gototop{
+    padding: 5px;
+    box-sizing: border-box;
+    border-top: 1px solid #e9e9e9;
+    height: 24px;
+    padding: 24px 20px 14px;
+    box-sizing: border-box;
+    background-image: url(../img/btn_top.png);
+    background-size: 19px auto;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
